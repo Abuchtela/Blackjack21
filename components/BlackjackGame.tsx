@@ -59,11 +59,11 @@ export function BlackjackGame() {
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">
             Blackjack21
           </h1>
-          <p className="text-base-gray mb-4">
+          <p className="text-base-gray mb-4 text-sm sm:text-base">
             Play Blackjack on Base Network
           </p>
           <div className="flex justify-center">
@@ -72,19 +72,19 @@ export function BlackjackGame() {
         </div>
 
         {/* Game Stats */}
-        <div className="bg-base-dark/50 rounded-lg p-4 mb-6 flex justify-between items-center">
-          <div className="text-white">
+        <div className="bg-base-dark/50 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
+          <div className="text-white text-sm sm:text-base">
             <span className="text-base-gray">Balance: </span>
             <span className="font-bold text-base-green">{gameState.balance} chips</span>
           </div>
           {gameState.bet > 0 && (
-            <div className="text-white">
+            <div className="text-white text-sm sm:text-base">
               <span className="text-base-gray">Current Bet: </span>
               <span className="font-bold text-yellow-400">{gameState.bet} chips</span>
             </div>
           )}
           {isConnected && balance && (
-            <div className="text-white">
+            <div className="text-white text-sm sm:text-base">
               <span className="text-base-gray">Wallet: </span>
               <span className="font-bold text-base-blue">
                 {parseFloat(balance.formatted).toFixed(4)} {balance.symbol}
@@ -94,18 +94,18 @@ export function BlackjackGame() {
         </div>
 
         {/* Game Board */}
-        <div className="bg-green-800 rounded-lg p-6 mb-6">
+        <div className="bg-green-800 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
           {/* Dealer Hand */}
-          <div className="mb-8">
-            <div className="flex items-center mb-4">
-              <h3 className="text-white text-xl font-semibold mr-4">
+          <div className="mb-6 sm:mb-8">
+            <div className="flex items-center mb-3 sm:mb-4">
+              <h3 className="text-white text-lg sm:text-xl font-semibold mr-4">
                 Dealer
               </h3>
-              <span className="text-base-gray">
+              <span className="text-base-gray text-sm sm:text-base">
                 Score: {gameState.gameStatus === 'playing' ? '?' : gameState.dealerScore}
               </span>
             </div>
-            <div className="flex space-x-2">
+            <div className="flex space-x-1 sm:space-x-2 flex-wrap">
               {gameState.dealerHand.map((card, index) => (
                 <Card 
                   key={`dealer-${index}`}
@@ -118,15 +118,15 @@ export function BlackjackGame() {
 
           {/* Player Hand */}
           <div>
-            <div className="flex items-center mb-4">
-              <h3 className="text-white text-xl font-semibold mr-4">
+            <div className="flex items-center mb-3 sm:mb-4">
+              <h3 className="text-white text-lg sm:text-xl font-semibold mr-4">
                 Player
               </h3>
-              <span className="text-base-gray">
+              <span className="text-base-gray text-sm sm:text-base">
                 Score: {gameState.playerScore}
               </span>
             </div>
-            <div className="flex space-x-2">
+            <div className="flex space-x-1 sm:space-x-2 flex-wrap">
               {gameState.playerHand.map((card, index) => (
                 <Card 
                   key={`player-${index}`}
@@ -138,13 +138,13 @@ export function BlackjackGame() {
         </div>
 
         {/* Game Message */}
-        <div className="text-center mb-6">
-          <p className="text-xl text-white font-semibold">
+        <div className="text-center mb-4 sm:mb-6">
+          <p className="text-lg sm:text-xl text-white font-semibold">
             {gameState.message}
           </p>
           {gameState.result && (
             <div className="mt-2">
-              <span className={`text-2xl font-bold ${
+              <span className={`text-xl sm:text-2xl font-bold ${
                 gameState.result === 'win' || gameState.result === 'blackjack' 
                   ? 'text-base-green' 
                   : gameState.result === 'lose' 
@@ -164,12 +164,12 @@ export function BlackjackGame() {
         <div className="text-center">
           {gameState.gameStatus === 'betting' && (
             <div className="space-y-4">
-              <div className="flex justify-center space-x-2">
+              <div className="flex justify-center space-x-1 sm:space-x-2 flex-wrap gap-2">
                 {betAmounts.map(amount => (
                   <button
                     key={amount}
                     onClick={() => setBetAmount(amount)}
-                    className={`game-button ${
+                    className={`game-button text-sm sm:text-base px-3 sm:px-4 py-2 ${
                       betAmount === amount ? 'primary' : 'secondary'
                     }`}
                     disabled={amount > gameState.balance}
@@ -181,7 +181,7 @@ export function BlackjackGame() {
               <button
                 onClick={handlePlaceBet}
                 disabled={betAmount > gameState.balance || isDealing}
-                className="game-button success text-lg px-8 py-4"
+                className="game-button success text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
                 {isDealing ? 'Dealing...' : `Place Bet (${betAmount} chips)`}
               </button>
@@ -189,16 +189,16 @@ export function BlackjackGame() {
           )}
 
           {gameState.gameStatus === 'playing' && (
-            <div className="space-x-4">
+            <div className="space-x-2 sm:space-x-4">
               <button
                 onClick={handleHit}
-                className="game-button primary text-lg px-8 py-4"
+                className="game-button primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
                 Hit
               </button>
               <button
                 onClick={handleStand}
-                className="game-button secondary text-lg px-8 py-4"
+                className="game-button secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
                 Stand
               </button>
@@ -208,7 +208,7 @@ export function BlackjackGame() {
           {gameState.gameStatus === 'finished' && (
             <button
               onClick={handleNewGame}
-              className="game-button primary text-lg px-8 py-4"
+              className="game-button primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
             >
               New Game
             </button>

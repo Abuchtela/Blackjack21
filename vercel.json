@@ -1,0 +1,21 @@
+{
+  "functions": {
+    "pages/api/frame.ts": {
+      "maxDuration": 10
+    },
+    "pages/api/og.ts": {
+      "maxDuration": 10
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/og",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=60, stale-while-revalidate=300"
+        }
+      ]
+    }
+  ]
+}
