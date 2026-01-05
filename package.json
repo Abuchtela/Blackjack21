@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "next": "14.0.0",
-    "react": "^18.2.0",
+    "react": "^19.0.0",
     "react-dom": "^18.2.0",
     "@coinbase/wallet-sdk": "^3.7.1",
     "wagmi": "^1.4.13",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.0.0",
-    "@types/react": "^18.2.37",
+    "@types/react": "^19.0.0",
     "@types/react-dom": "^18.2.15",
     "eslint": "^8.53.0",
     "eslint-config-next": "14.0.0",
