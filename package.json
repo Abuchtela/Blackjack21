@@ -16,7 +16,7 @@
     "wagmi": "^1.4.13",
     "viem": "^1.19.9",
     "@rainbow-me/rainbowkit": "^2.0.0",
-    "@tanstack/react-query": "^4.36.1"
+    "@tanstack/react-query": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.19.17",
