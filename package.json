@@ -12,7 +12,7 @@
     "next": "14.0.0",
     "react": "^19.0.0",
     "react-dom": "^18.2.0",
-    "@coinbase/wallet-sdk": "^3.7.1",
+    "@coinbase/wallet-sdk": "^4.0.0",
     "wagmi": "^1.4.13",
     "viem": "^1.19.9",
     "@rainbow-me/rainbowkit": "^2.0.0",
