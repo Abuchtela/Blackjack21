@@ -26,6 +26,8 @@ const connectors = connectorsForWallets(
 
 const wagmiConfig = createConfig({
   connectors,
+  // Using Base mainnet and Base Sepolia testnet
+  // Note: If testnet is deprecated, update to the latest Base testnet chain
   chains: [base, baseSepolia],
   transports: {
     [base.id]: http(),
