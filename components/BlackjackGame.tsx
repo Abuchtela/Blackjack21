@@ -60,11 +60,18 @@ export function BlackjackGame() {
       <div className="w-full max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">
-            Blackjack21
-          </h1>
+          <div className="flex items-center justify-center mb-4">
+            <img 
+              src="/base-logo.svg" 
+              alt="Base Logo" 
+              className="w-12 h-12 sm:w-16 sm:h-16 mr-3 sm:mr-4"
+            />
+            <h1 className="text-3xl sm:text-4xl font-bold text-white">
+              Blackjack21
+            </h1>
+          </div>
           <p className="text-base-gray mb-4 text-sm sm:text-base">
-            Play Blackjack on Base Network
+            Play Blackjack on Base Network • Farcaster Ready
           </p>
           <div className="flex justify-center">
             <ConnectButton />

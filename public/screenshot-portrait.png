@@ -1,0 +1,76 @@
+<svg width="600" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="screenBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A1A"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="1200" fill="url(#screenBg)"/>
+  
+  <!-- Header -->
+  <text x="300" y="80" font-family="Arial, sans-serif" font-size="48" font-weight="bold" 
+        text-anchor="middle" fill="#FFFFFF">Blackjack21</text>
+  <text x="300" y="120" font-family="Arial, sans-serif" font-size="20" 
+        text-anchor="middle" fill="#8A8A8A">Play on Base Network</text>
+  
+  <!-- Wallet connect button mockup -->
+  <rect x="200" y="150" width="200" height="50" rx="12" fill="#0052FF"/>
+  <text x="300" y="182" font-family="Arial, sans-serif" font-size="18" font-weight="bold" 
+        text-anchor="middle" fill="#FFFFFF">Connect Wallet</text>
+  
+  <!-- Stats bar -->
+  <rect x="50" y="240" width="500" height="80" rx="8" fill="#1A1A1A" opacity="0.5"/>
+  <text x="80" y="270" font-family="Arial, sans-serif" font-size="16" fill="#8A8A8A">Balance:</text>
+  <text x="80" y="300" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#00D632">1000 chips</text>
+  <text x="350" y="270" font-family="Arial, sans-serif" font-size="16" fill="#8A8A8A">Current Bet:</text>
+  <text x="350" y="300" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFD23F">10 chips</text>
+  
+  <!-- Game table -->
+  <ellipse cx="300" cy="600" rx="250" ry="150" fill="#0F5132"/>
+  
+  <!-- Dealer section -->
+  <text x="150" y="450" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">Dealer</text>
+  <text x="150" y="480" font-family="Arial, sans-serif" font-size="16" fill="#8A8A8A">Score: ?</text>
+  
+  <!-- Dealer cards -->
+  <rect x="180" y="490" width="60" height="84" rx="6" fill="#FFFFFF"/>
+  <text x="210" y="520" font-family="Arial, sans-serif" font-size="16" font-weight="bold" 
+        text-anchor="middle" fill="#000000">K♠</text>
+  
+  <rect x="250" y="490" width="60" height="84" rx="6" fill="#0052FF"/>
+  <text x="280" y="540" font-family="Arial, sans-serif" font-size="24" font-weight="bold" 
+        text-anchor="middle" fill="#FFFFFF">?</text>
+  
+  <!-- Player section -->
+  <text x="150" y="720" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">Player</text>
+  <text x="150" y="750" font-family="Arial, sans-serif" font-size="16" fill="#8A8A8A">Score: 19</text>
+  
+  <!-- Player cards -->
+  <rect x="180" y="760" width="60" height="84" rx="6" fill="#FFFFFF"/>
+  <text x="210" y="790" font-family="Arial, sans-serif" font-size="16" font-weight="bold" 
+        text-anchor="middle" fill="#FF0000">A♥</text>
+  
+  <rect x="250" y="760" width="60" height="84" rx="6" fill="#FFFFFF"/>
+  <text x="280" y="790" font-family="Arial, sans-serif" font-size="16" font-weight="bold" 
+        text-anchor="middle" fill="#000000">8♣</text>
+  
+  <!-- Game message -->
+  <text x="300" y="920" font-family="Arial, sans-serif" font-size="24" font-weight="bold" 
+        text-anchor="middle" fill="#FFFFFF">Hit or Stand?</text>
+  
+  <!-- Action buttons -->
+  <rect x="100" y="970" width="150" height="60" rx="12" fill="#0052FF"/>
+  <text x="175" y="1008" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
+        text-anchor="middle" fill="#FFFFFF">Hit</text>
+  
+  <rect x="350" y="970" width="150" height="60" rx="12" fill="#8A8A8A"/>
+  <text x="425" y="1008" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
+        text-anchor="middle" fill="#FFFFFF">Stand</text>
+  
+  <!-- Base network indicator -->
+  <circle cx="550" cy="1150" r="20" fill="#0052FF" opacity="0.3"/>
+  <text x="550" y="1157" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+        text-anchor="middle" fill="#FFFFFF">B</text>
+</svg>

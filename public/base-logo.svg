@@ -1,0 +1,14 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="baseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0052FF"/>
+      <stop offset="100%" style="stop-color:#0041CC"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Base blue circle background -->
+  <circle cx="100" cy="100" r="100" fill="url(#baseGradient)"/>
+  
+  <!-- White "B" letter stylized as Base logo -->
+  <path d="M 60 50 L 60 150 L 110 150 C 130 150 145 135 145 115 C 145 105 140 96 132 92 C 137 88 140 81 140 74 C 140 58 128 50 110 50 Z M 80 65 L 105 65 C 115 65 120 70 120 78 C 120 86 115 91 105 91 L 80 91 Z M 80 106 L 108 106 C 118 106 125 111 125 120 C 125 129 118 135 108 135 L 80 135 Z" fill="white"/>
+</svg>
