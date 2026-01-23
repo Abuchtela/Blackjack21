@@ -1,9 +1,4 @@
 export const minikitConfig = {
-  accountAssociation: {
-    header: "",
-    payload: "",
-    signature: ""
-  },
   miniapp: {
     version: "1",
     name: "baseblackjack21",
