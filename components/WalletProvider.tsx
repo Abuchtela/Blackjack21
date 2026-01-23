@@ -1,51 +1,36 @@
 'use client';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { WagmiConfig, createConfig, configureChains } from 'wagmi';
-import { base, baseGoerli } from 'wagmi/chains';
-import { publicProvider } from 'wagmi/providers/public';
-import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet';
-import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
-import { RainbowKitProvider, getDefaultWallets, connectorsForWallets } from '@rainbow-me/rainbowkit';
+import { WagmiProvider, createConfig, http } from 'wagmi';
+import { base, baseSepolia } from 'wagmi/chains';
+import { RainbowKitProvider, connectorsForWallets } from '@rainbow-me/rainbowkit';
 import { coinbaseWallet, metaMaskWallet, walletConnectWallet } from '@rainbow-me/rainbowkit/wallets';
 import '@rainbow-me/rainbowkit/styles.css';
 
-const { chains, publicClient } = configureChains(
-  [base, baseGoerli],
-  [publicProvider()]
+const connectors = connectorsForWallets(
+  [
+    {
+      groupName: 'Recommended',
+      wallets: [
+        coinbaseWallet,
+        metaMaskWallet,
+        walletConnectWallet,
+      ],
+    },
+  ],
+  {
+    appName: 'Blackjack21',
+    projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || 'default-project-id',
+  }
 );
 
-const { wallets } = getDefaultWallets({
-  appName: 'Blackjack21',
-  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || 'your-project-id',
-  chains
-});
-
-const connectors = connectorsForWallets([
-  {
-    groupName: 'Recommended',
-    wallets: [
-      coinbaseWallet({ 
-        appName: 'Blackjack21',
-        chains 
-      }),
-      metaMaskWallet({ 
-        chains,
-        projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || 'default-project-id'
-      }),
-      walletConnectWallet({ 
-        chains,
-        projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || 'default-project-id'
-      }),
-    ],
-  },
-]);
-
 const wagmiConfig = createConfig({
-  autoConnect: true,
   connectors,
-  publicClient
+  chains: [base, baseSepolia],
+  transports: {
+    [base.id]: http(),
+    [baseSepolia.id]: http(),
+  },
 });
 
 const queryClient = new QueryClient();
@@ -108,12 +93,12 @@ const rainbowKitTheme = {
 
 export function WalletProvider({ children }: { children: React.ReactNode }) {
   return (
-    <WagmiConfig config={wagmiConfig}>
+    <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider chains={chains} theme={rainbowKitTheme}>
+        <RainbowKitProvider theme={rainbowKitTheme}>
           {children}
         </RainbowKitProvider>
       </QueryClientProvider>
-    </WagmiConfig>
+    </WagmiProvider>
   );
 }
