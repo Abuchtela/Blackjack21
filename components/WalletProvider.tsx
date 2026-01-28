@@ -20,7 +20,7 @@ const connectors = connectorsForWallets(
   ],
   {
     appName: 'Blackjack21',
-    projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || 'default-project-id',
+    projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || '',
   }
 );
 

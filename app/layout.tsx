@@ -3,18 +3,18 @@ import './globals.css'
 import { WalletProvider } from '../components/WalletProvider'
 
 export const metadata: Metadata = {
-  title: 'Blackjack21 - Play on Base',
-  description: 'A Blackjack card game with Base wallet integration and Farcaster Frame support',
+  title: 'Blackjack21 - Play on Base Network',
+  description: 'Classic Blackjack21 game. Bet tokens, play hands, and experience casino-style gameplay with neon blue theme on Base network.',
   openGraph: {
-    title: 'Blackjack21',
-    description: 'A Blackjack card game with Base wallet integration',
+    title: 'baseblackjack21',
+    description: 'Play casino-style Blackjack21 with tokens and wallet on Base. Neon blue theme, Farcaster-ready.',
     images: ['/og-image.png'],
   },
   other: {
     'fc:frame': 'vNext',
-    'fc:frame:image': 'https://your-domain.com/api/og',
+    'fc:frame:image': `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/og`,
     'fc:frame:button:1': 'Play Blackjack',
-    'fc:frame:post_url': 'https://your-domain.com/api/frame',
+    'fc:frame:post_url': `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/frame`,
   },
 }
 
