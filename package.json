@@ -9,21 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.0.0",
-    "react": "^18.2.0",
+    "next": "14.2.35",
+    "react": "^19.0.0",
     "react-dom": "^18.2.0",
-    "@coinbase/wallet-sdk": "^3.7.1",
-    "wagmi": "^2.0.0",
-    "viem": "^2.0.0",
+    "@coinbase/wallet-sdk": "^4.0.0",
+    "wagmi": "^1.4.13",
+    "viem": "^1.19.9",
     "@rainbow-me/rainbowkit": "^2.0.0",
-    "@tanstack/react-query": "^5.0.0"
+    "@tanstack/react-query": "^5.28.4"
   },
   "devDependencies": {
-    "@types/node": "^20.19.17",
+    "@types/node": "^25.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.15",
-    "eslint": "^8.53.0",
-    "eslint-config-next": "14.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.1.4",
     "typescript": "^5.2.2",
     "tailwindcss": "^3.3.5",
     "autoprefixer": "^10.4.16",
