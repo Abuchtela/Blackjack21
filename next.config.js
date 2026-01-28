@@ -5,6 +5,18 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
+  webpack: (config) => {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      tls: false,
+      'pino-pretty': false,
+      encoding: false,
+      '@react-native-async-storage/async-storage': false,
+    };
+    return config;
+  },
   async headers() {
     return [
       {
